@@ -1,11 +1,11 @@
 Two Sum
 
-// Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
-// You may assume that each input would have exactly one solution, and you may not use the same element twice.
-// You can return the answer in any order.
+Given an array of integers nums and an integer target, return indices of the two numbers such that they add up to target.
+You may assume that each input would have exactly one solution, and you may not use the same element twice.
+You can return the answer in any order.
 
 //Hashmap
- public static int[] twoSum(int[] nums, int target) {
+ public int[] twoSum(int[] nums, int target) {
         HashMap<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
             if (map.containsKey(target - nums[i])) {
@@ -21,7 +21,7 @@ Two Sum
 // Space complexity - O(N)
 
 //Brute Force
-public static int[] twoSum(int[] nums, int target) {
+public int[] twoSum(int[] nums, int target) {
         for (int i = 0; i < nums.length; i++) {
             for (int j = i + 1; j < nums.length; j++) {
                 if (nums[i] + nums[j] == target) {
@@ -34,3 +34,21 @@ public static int[] twoSum(int[] nums, int target) {
 }
 // Time complexity - O(N^2)
 // Space complexity - O(1)
+____________________________________________________________________________
+Palindrome Number
+
+Given an integer x, return true if x is palindrome integer.
+
+public boolean isPalindrome(int x) {
+        int reversed = 0;
+        int temp = x;
+        while (temp > 0) {
+            reversed *= 10;
+            reversed += temp % 10;
+            temp /= 10;
+        }
+        return reversed == x;
+    }
+    // Time complexity O(N)
+    // Space complexity O(1)
+____________________________________________________________________________
